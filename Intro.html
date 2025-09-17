@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shikha Chakrawarty | Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #0a0a0a;
+      color: #f1f1f1;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(6px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+    }
+
+    nav h1 {
+      font-size: 1.8rem;
+      color: #fff;
+      letter-spacing: 2px;
+      animation: fadeInDown 1.2s ease;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #ddd;
+      transition: 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ff5e5e;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top:0; left:0; right:0; bottom:0;
+      background: rgba(0,0,0,0.65);
+    }
+    .hero h2, .hero p {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      animation: fadeInUp 1.5s ease;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      margin-top: 15px;
+      animation: fadeInUp 2s ease;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 10%;
+      position: relative;
+    }
+    section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      color: #00e5ff;
+      animation: fadeIn 1.5s ease;
+      text-shadow: rgba(100,2,230,1);
+      
+    }
+    .about, .hobbies {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin: 20px;
+    }
+    .about img, .hobbies img {
+      width: 50%;
+      border-radius: 12px;
+      animation: zoomIn 2s ease;
+    }
+    .about p, .hobbies p {
+      font-size: 1.6rem;
+      flex: 1;
+      animation: fadeInUp 2s ease;
+    }
+
+    /* Tech stack */
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .tech {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      transition: transform 0.4s, box-shadow 0.4s;
+      text-align: center;
+      width: 120px;
+    }
+    .tech img {
+      width: 60px;
+      height: 60px;
+    }
+    .tech:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 20px rgba(255,94,94,0.6);
+    }
+
+    /* Resume */
+    .resume {
+      text-align: center;
+    }
+    .resume a {
+      display: inline-block;
+      padding: 15px 40px;
+      background: #ff5e5e;
+      border-radius: 30px;
+      text-decoration: none;
+      color: white;
+      font-size: 1.2rem;
+      transition: 0.4s;
+    }
+    .resume a:hover {
+      background: #ff3030;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255,94,94,0.8);
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity:0;} to {opacity:1;}
+    }
+    @keyframes fadeInUp {
+      from {opacity:0; transform: translateY(20px);} to {opacity:1; transform: translateY(0);}
+    }
+    @keyframes fadeInDown {
+      from {opacity:0; transform: translateY(-20px);} to {opacity:1; transform: translateY(0);}
+    }
+    @keyframes zoomIn {
+      from {opacity:0; transform: scale(0.8);} to {opacity:1; transform: scale(1);}
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <h1>Shikha Chakrawarty</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#tech">Tech Stack</a></li>
+      <li><a href="#hobbies">Hobbies</a></li>
+      <li><a href="#resume">Resume</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>Hello, I'm Shikha 👋</h2>
+    <p>Aspiring Software Engineer | Java | Spring Boot | Web Developer</p>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about">
+    <img src="https://images.unsplash.com/photo-1539800586303-1365b30f03e5?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="About Me">
+      <p>
+        I am a passionate software developer, continuously learning and exploring new technologies. 
+        My journey in computer science has shaped me into a problem solver who enjoys building 
+        applications that make an impact. I believe in blending creativity with logic 
+        to create meaningful solutions for real-world challenges.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section id="tech">
+    <h2>My Tech Stack</h2>
+    <div class="tech-stack">
+      <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"/><p>Java</p></div>
+      <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"/><p>Spring Boot</p></div>
+      <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"/><p>MySQL</p></div>
+      <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/><p>HTML</p></div>
+      <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"/><p>CSS</p></div>
+      <div class="tech"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"/><p>JavaScript</p></div>
+    </div>
+  </section>
+
+  <!-- Hobbies -->
+  <section id="hobbies">
+    <h2>My Hobbies</h2>
+    <div class="hobbies">
+      <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80" alt="Sketching">
+      <p>
+        🎨 I love sketching in my free time. It helps me relax and enhances my creativity, 
+        which I bring into my coding projects as well.
+      </p>
+    </div>
+    <div class="hobbies">
+      <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80" alt="Music">
+      <p>
+        🎶 Music is my escape. I enjoy listening to soulful and instrumental tracks 
+        that keep me motivated while working or learning.
+      </p>
+    </div>
+    <div class="hobbies">
+      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" alt="Reading">
+      <p>
+        📚 Reading books helps me gain perspective and explore new ideas. 
+        It balances my technical knowledge with wisdom and imagination.
+      </p>
+    </div>
+  </section>
+
+  <!-- Resume -->
+  <section id="resume" class="resume">
+    <h2>Want to Know More?</h2>
+    <a href="Shikha_Chakrawarty_Resume.pdf" target="_blank">Download Resume</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 | Designed by Shikha Chakrawarty
+  </footer>
+</body>
+</html>

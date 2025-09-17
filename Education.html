@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Educational Background</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .navbar{
+        height: 7vh;
+        width: 100%;
+        color:#5C8374;
+        background-color: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        text-align: justify;
+        text-decoration: none;
+        font-size: 2vw;
+        font-weight: 100;
+        margin-top: 4vh;
+
+    }
+    .navbar a{
+        color: #93B1A6;
+        text-decoration: none;
+        display: inline-block;
+        
+    }
+    .navbar a:hover{
+        box-shadow: 10px 5px 5px #183D3D;
+        text-decoration: none;
+        font-size: 2vw;
+        font-style: italic;
+        color: #5C8374;
+        text-shadow: rgba(100,2,230,1);
+    }
+
+    /* Background with overlay */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;
+      color: #f5f5f5;
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 0;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 10px 20px;
+      position: relative;
+      z-index: 1;
+    }
+    
+
+    header h1 {
+      font-size: 3rem;
+      color: #00e5ff;
+      text-shadow: 0 0 10px rgba(0,229,255,0.8), 0 0 30px rgba(0,229,255,0.5);
+      animation: glow 2s infinite alternate;
+    }
+
+    /* Container */
+    .container {
+      width: 85%;
+      margin: 60px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Education Card */
+    .edu-card {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      background: rgba(20,20,20,0.95);
+      border-radius: 15px;
+      overflow: hidden;
+      border: 2px solid #333;
+      transition: all 0.4s ease;
+      padding: 20px;
+      position: relative;
+    }
+
+    .edu-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 0 25px rgba(0,229,255,0.4);
+      border-color: #00e5ff;
+    }
+
+    /* Images inside cards */
+    .edu-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.4s ease;
+    }
+
+    .edu-card:hover img {
+      transform: scale(1.1) rotate(3deg);
+    }
+
+    /* Card content */
+    .edu-content h2 {
+      font-size: 1.8rem;
+      color: #ff9100;
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+
+    .edu-card:hover .edu-content h2 {
+      color: #00e5ff;
+    }
+
+    .edu-content p {
+      color: #ccc;
+      margin: 6px 0;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      margin-top: 80px;
+      background: rgba(15,15,15,0.95);
+      border-top: 2px solid #00e5ff;
+      position: relative;
+      z-index: 1;
+      color: #aaa;
+    }
+    
+
+    /* Animations */
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff; }
+      to { text-shadow: 0 0 20px #00e5ff, 0 0 40px #00e5ff; }
+    }
+  </style>
+</head>
+<body>
+    <header>
+    <h1>My Educational Background</h1>
+  </header>
+
+  <header>
+    <nav class="navbar">
+        <div><a href="Education.html">Education</a></div>
+        <div><a href="Certification.html">Certifications</a></div>
+        <div><a href="Intro.html">About ME</a></div>
+        <div><a href="project.html">Projects</a></div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="edu-card">
+      <img src="https://img.icons8.com/fluency/120/000000/graduation-cap.png" alt="B.Tech">
+      <div class="edu-content">
+        <h2>Bachelor of Technology (B.Tech) - Computer Science</h2>
+        <p><strong>University:</strong> RGPV</p>
+        <p><strong>Year:</strong> 2021 - 2025</p>
+        <p><strong>Highlights:</strong> Core Java, Spring Boot, Web Development</p>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <img src="https://img.icons8.com/fluency/120/000000/books.png" alt="Higher Secondary">
+      <div class="edu-content">
+        <h2>Higher Secondary Education</h2>
+        <p><strong>School:</strong> Govt. High Secondary School</p>
+        <p><strong>Year:</strong> 2019 - 2020</p>
+        <p><strong>Subjects:</strong> Physics, Chemistry, Mathematics</p>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <img src="https://img.icons8.com/fluency/120/000000/school-building.png" alt="Secondary">
+      <div class="edu-content">
+        <h2>Secondary Education</h2>
+        <p><strong>School:</strong> Govt. High School</p>
+        <p><strong>Year:</strong> 2017 - 2018</p>
+        <p><strong>Achievements:</strong> Science Fair Winner, Essay writting winner</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 | Designed with 💙 by Me
+  </footer>
+</body>
+</html>
