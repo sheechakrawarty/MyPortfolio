@@ -1,238 +1,549 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Shikha Chakrawarty - Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <style>
-    *{
-        margin:0;
-        
+    :root {
+        --primary-color: #5C8374;
+        --secondary-color: #93B1A6;
+        --dark-color: #183D3D;
+        --light-color: #f5f5f5;
+        --text-color: #333;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-    body{
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+    }
+
+    body {
         background-image: url('background.avif');
-       
-        background-size: contain;
+        background-size: cover;
+        background-attachment: fixed;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
     }
-    .pimage{
-        
-        border-radius: 50%;
-        box-shadow: 5px 5px#93B1A6, -1em 0 .5em #183D3D;
-        justify-self: center;
-    }
-    .pimage img{
-        border-radius: 50%;
-    }
-    
-    
-    
-    .navbar{
-        height: 50px;
-        width: 100%;
-        color:#5C8374;
-        background-color: none;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        text-align: justify;
-        text-decoration: none;
-        font-size: 30px;
-        font-weight: 100;
-        margin-top: 20px;
 
-    }
-    .navbar a{
-        color: #93B1A6;
-        text-decoration: none;
-        display: inline-block;
-        
-    }
-    .navbar a:hover{
-        box-shadow: 10px 5px 5px #183D3D;
-        text-decoration: none;
-        font-size: 32px;
-        font-style: italic;
-        color: #5C8374;
-        text-shadow: rgba(100,2,230,1);
-    }
-    main{
-        margin-top: 20px;
+    .container {
         width: 100%;
-        height: max-content;
-        background-color: none;
-        display: inline-block;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    header {
+        background-color: var(--primary-color);
+        padding: 20px 0;
+        text-align: center;
+        border-radius: 0 0 20px 20px;
+        box-shadow: var(--shadow);
+        animation: fadeInDown 1s ease;
+    }
+
+    header h1 {
+        color: white;
+        font-size: 2.5rem;
+        font-weight: 600;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar {
+        padding: 20px 0;
+        display: flex;
         justify-content: center;
-        align-items: center;
-      
-    }
-    .social{
-        margin-top: 100px;
-        width: 100%;
-        display: flex;
-        align-content: center;
-        justify-content: space-around;
-        
-        
-    }
-    .social li{
-        
-        list-style: none;
-        text-decoration: none;
-        text-align:end;
-        height: 100px;
-        width: 100px;   
-        font-size: large;
-        text-align: center; 
-        
-       
-    }
-    .social li img{
-       border-radius: 13px; 
-       height: 100px;
-       width: auto;
-       
-    }
-    
-    .social li:hover{
-        background-color: #183D3D;
+        flex-wrap: wrap;
+        gap: 20px;
+        animation: fadeIn 1.5s ease;
     }
 
-    .Intro{
-        background-color: rgb(0, 0, 0);
-        height: 800px;
-        font-size: 30px;
-        color: #93B1A6;
-        display: flex;
-        
-        align-items:center;
-        justify-content: space-evenly;
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    .wrapper{
-        width: max-content;
-        display: flex;
-        align-items:center;
-    }
-    .wrapper .dynamic-txt{
+    .navbar a {
+        color: var(--secondary-color);
         text-decoration: none;
+        font-size: 1.4rem;
+        padding: 10px 20px;
+        border-radius: 30px;
+        position: relative;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
+    }
+
+    .navbar a:hover {
+        color: var(--primary-color);
+        background: rgba(255, 255, 255, 0.8);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--primary-color);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+    }
+
+    .navbar a:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    main {
+        padding: 40px 0;
+        text-align: center;
+        animation: fadeInUp 1s ease;
+    }
+
+    .pimage {
+        display: inline-block;
+        border-radius: 50%;
+        padding: 10px;
+        background: linear-gradient(45deg, var(--primary-color), var(--dark-color));
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        animation: float 3s ease-in-out infinite;
+        margin-bottom: 30px;
+    }
+
+    .pimage img {
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        border: 5px solid white;
+        transition: transform 0.5s ease;
+    }
+
+    .pimage:hover img {
+        transform: scale(1.05);
+    }
+
+    .social {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 40px;
+        animation: fadeInUp 1.5s ease;
+    }
+
+    .social-item {
         list-style: none;
-        color: #93B1A6;
-        font-weight: 200;
-        font-size: 40px;
-        text-shadow: 1px 1px 2px #1d00f8, 0 0 0.6em red, 0 0 0.4em #ff0404;
-        line-height: 60px;
+        text-align: center;
+        width: 120px;
+        transition: transform 0.3s ease;
+    }
+
+    .social-item:hover {
+        transform: translateY(-10px);
+    }
+
+    .social-item a {
+        display: block;
+        text-decoration: none;
+        color: var(--dark-color);
+        font-weight: 600;
+    }
+
+    .social-item img {
+        width: 80px;
+        height: 80px;
+        border-radius: 15px;
+        object-fit: cover;
+        margin-bottom: 10px;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+    }
+
+    .social-item:hover img {
+        transform: scale(1.1);
+    }
+
+    .Intro {
+        background: rgba(0, 0, 0, 0.85);
+        color: var(--secondary-color);
+        padding: 60px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 600px;
+        animation: fadeIn 2s ease;
+    }
+
+    .intro-text {
+        max-width: 500px;
+        font-size: 1.5rem;
+        line-height: 1.8;
+        padding: 20px;
+    }
+
+    .intro-text span {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .wrapper {
+        display: inline-block;
+        position: relative;
         height: 60px;
-        background-color: #000000;
         overflow: hidden;
     }
-    .dynamic-txt li{
+
+    .dynamic-txt {
+        list-style: none;
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--secondary-color);
+        text-shadow: 1px 1px 2px #1d00f8, 0 0 0.6em red, 0 0 0.4em #ff0404;
+        animation: slide 6s infinite;
+    }
+
+    .dynamic-txt li {
+        animation: typing 3s steps(20) infinite;
+        white-space: nowrap;
+        overflow: hidden;
         position: relative;
-        top:0;
-        animation:slide 4s steps(2) infinite;
+    }
+
+    .coder_pic {
+        max-width: 500px;
+        padding: 20px;
+    }
+
+    .coder_pic img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 50%;
+        box-shadow: 0 10px 30px rgba(92, 131, 116, 0.5);
+        animation: pulse 2s infinite;
+    }
+
+    footer {
+        background-color: #000;
+        color: var(--secondary-color);
+        padding: 60px 0;
+        text-align: center;
+        animation: fadeInUp 1.5s ease;
+    }
+
+    footer div {
+        margin-bottom: 30px;
+        font-size: 1.8rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    footer img {
+        max-width: 100%;
+        height: auto;
+        margin: 30px 0;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(147, 177, 166, 0.3);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(92, 131, 116, 0.7); }
+        70% { box-shadow: 0 0 0 15px rgba(92, 131, 116, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(92, 131, 116, 0); }
     }
 
     @keyframes slide {
-        100%{
-            top:-120px;
+        0%, 20% { transform: translateY(0); }
+        25%, 45% { transform: translateY(-60px); }
+        50%, 70% { transform: translateY(-120px); }
+        75%, 95% { transform: translateY(-180px); }
+        100% { transform: translateY(0); }
+    }
+
+    @keyframes typing {
+        0% { width: 0; }
+        50% { width: 100%; }
+        100% { width: 0; }
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 992px) {
+        header h1 {
+            font-size: 2rem;
+        }
+        
+        .navbar a {
+            font-size: 1.2rem;
+            padding: 8px 16px;
+        }
+        
+        .intro-text {
+            font-size: 1.3rem;
+        }
+        
+        .dynamic-txt {
+            font-size: 1.7rem;
+        }
+        
+        footer div {
+            font-size: 1.5rem;
         }
     }
 
-    .dynamic-txt li::after{
-        content:"";
-        position: absolute;
-        left:0;
-        height: 100%;
-        width: 100%;
-        border-left: 2px solid #ff0404;
-        animation: typing 2s steps(6) infinite;
-        background-color: black;
+    @media (max-width: 768px) {
+        .navbar {
+            gap: 10px;
+        }
         
-    }
-    @keyframes typing {
-        40%,60%{
-            left:calc(100% + 30px);
+        .navbar a {
+            font-size: 1rem;
+            padding: 6px 12px;
         }
-        100%{
-            left:0;
-           
+        
+        .pimage img {
+            width: 200px;
+            height: 200px;
+        }
+        
+        .social {
+            gap: 20px;
+        }
+        
+        .social-item {
+            width: 100px;
+        }
+        
+        .social-item img {
+            width: 60px;
+            height: 60px;
+        }
+        
+        .Intro {
+            flex-direction: column;
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .intro-text {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .dynamic-txt {
+            font-size: 1.5rem;
+        }
+        
+        .coder_pic img {
+            max-width: 300px;
+        }
+        
+        footer div {
+            font-size: 1.3rem;
         }
     }
-    .coder_pic img{
-        border-radius: 50%;
-        height: 500px;
-        width: 500px; 
-        object-fit: cover;
-                
-        box-shadow: 5px 5px  .8em #5C8374;
-    } 
-    footer{
-        background-color: #000000;
-        font-size: 40px;
-        color: #93B1A6;
-        height: 400px;
-        width: 100%;
-        padding:20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-    }      
-    footer img{
-        margin-top: 40px;
-        margin-left: 70px;
+
+    @media (max-width: 576px) {
+        header h1 {
+            font-size: 1.7rem;
+        }
+        
+        .navbar {
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .navbar a {
+            width: 80%;
+            text-align: center;
+        }
+        
+        .pimage img {
+            width: 150px;
+            height: 150px;
+        }
+        
+        .social {
+            gap: 15px;
+        }
+        
+        .social-item {
+            width: 80px;
+        }
+        
+        .social-item img {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .intro-text {
+            font-size: 1rem;
+        }
+        
+        .dynamic-txt {
+            font-size: 1.2rem;
+        }
+        
+        .coder_pic img {
+            max-width: 250px;
+        }
+        
+        footer div {
+            font-size: 1.1rem;
+        }
     }
-   
-    
 </style>
 <body>
     <header>
-        <h1 style="background-color: #5C8374; padding-bottom: 30px; padding-top: 30px; text-align: center; border-radius: 20px;" >Shikha chakrawarty</h1>
+        <div class="container">
+            <h1>Shikha Chakrawarty</h1>
+        </div>
     </header>
-    <nav class="navbar">
-        <div><a href="Educations.html">Education</a></div>
-        <div><a href="Certification.html">Certifications</a></div>
-        <div><a href="shikha.html">About ME</a></div>
-        <div><a href="project.html">Projects</a></div>
+    
+    <nav class="navbar container">
+        <a href="Educations.html">Education</a>
+        <a href="Certification.html">Certifications</a>
+        <a href="shikha.html">About ME</a>
+        <a href="project.html">Projects</a>
     </nav>
     
-    <main>
-      <div class="pimage"><img src="IMG_20230810_173228_386.jpg" alt="#" height="300"></div>    
-      <div class="social">
-        <li><div><a href="https://leetcode.com/u/ch_shikha/" target="_blank"> <img src="LeetCode.png" alt=""></a></div>LeetCode</li>
-        <li><div><a href="https://github.com/sheechakrawarty" target="_blank"> <img src="GitHub.png" alt=""></a></div>GitHub</li>
-        <li><div><a href="https://www.geeksforgeeks.org/user/shikhachamkau/" target="_blank"> <img src="geeks.png" alt=""></a></div>Geeks</li>
-        <li><div><a href="https://www.linkedin.com/in/shikha-chakrawarty-985a0a226/" target="_blank"> <img src="Linkedin.png" alt=""></a></div>Linkedin</li>
-        <li><div><a href="https://www.instagram.com/ch_shikha1/" target="_blank"> <img src="instagram.jpg" alt=""></a></div>Instagram</li>
-      </div>    
-    </main>
-    <div class="Intro">
-       
-        <div >
-        Hi,<br><span>
-            My name is Shikha 
-        </span><br>
-        <span>Chakrawarty.
-            <div class = "wrapper"> I am
-                <ul class="dynamic-txt">
-                    <li>Coder.</li>
-                    <li>developer.</li>
-                </ul>
-            </div>
-        </span><br>
-        <span>and i am enthusiastically seeking for</span><br>
-        <span>skilling up while working in </span><br>
-        <span>Tech industry.</span><br>
+    <main class="container">
+        <div class="pimage">
+            <img src="IMG_20230810_173228_386.jpg" alt="Shikha Chakrawarty">
         </div>
-        <div class="coder_pic"><img src="Intro.jpg" alt=""></div>
-    </div>
+        
+        <ul class="social">
+            <li class="social-item">
+                <a href="https://leetcode.com/u/ch_shikha/" target="_blank">
+                    <img src="LeetCode.png" alt="LeetCode">
+                    LeetCode
+                </a>
+            </li>
+            <li class="social-item">
+                <a href="https://github.com/sheechakrawarty" target="_blank">
+                    <img src="GitHub.png" alt="GitHub">
+                    GitHub
+                </li>
+            <li class="social-item">
+                <a href="https://www.geeksforgeeks.org/user/shikhachamkau/" target="_blank">
+                    <img src="geeks.png" alt="GeeksforGeeks">
+                    Geeks
+                </a>
+            </li>
+            <li class="social-item">
+                <a href="https://www.linkedin.com/in/shikha-chakrawarty-985a0a226/" target="_blank">
+                    <img src="Linkedin.png" alt="LinkedIn">
+                    LinkedIn
+                </a>
+            </li>
+            <li class="social-item">
+                <a href="https://www.instagram.com/ch_shikha1/" target="_blank">
+                    <img src="Instagram.jpg" alt="Instagram">
+                    Instagram
+                </a>
+            </li>
+        </ul>
+    </main>
+    
+    <section class="Intro">
+        
+            
+                <div class="intro-text">
+                    <span>Hi,</span>
+                    <span>My name is Shikha</span>
+                    <span>Chakrawarty.</span>
+                    <span>I am <span class="wrapper"><ul class="dynamic-txt"><li>Coder.</li><li>Developer.</li><li>Problem Solver.</li><li>Tech Enthusiast.</li></ul></span></span>
+                    <span>and I am enthusiastically seeking for</span>
+                    <span>skilling up while working in</span>
+                    <span>Tech industry.</span>
+                </div>
+                <div class="coder_pic">
+                    <img src="Intro.jpg" alt="Coding">
+                </div>
+           
+       
+    </section>
+    
     <footer>
-       <div> My leetcode Journey</div>
-        <img src="codeDays.png" alt="">
-        <div>
-            I have solved 470+ problems in leetcode while learning each day a new concept.
+        <div class="container">
+            <div>My LeetCode Journey</div>
+            <img src="codeDays.png" alt="LeetCode Stats">
+            <div>
+                I have solved 350+ problems in LeetCode while learning each day a new concept.
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Add scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.navbar, main, .Intro, footer');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            elements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
-
